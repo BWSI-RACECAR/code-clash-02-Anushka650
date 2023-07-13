@@ -29,26 +29,9 @@ Input: 0 Output: 0
 
 class Solution:
     def digitdecrypt(self, num):
-        total=0
-        for i in range(len(num)):
-            total += num%10
-            num/10
-
-        if len(total) != 0:
-            for i in range (len(total)):
-                temp = total
-                total=0
-                total = num%10
-                num/10
-                total = num%10
-        if len(total) != 0:
-            for i in range (len(total)):
-                temp = total
-                total=0
-                total = num%10
-                num/10
-                total = num%10
-        return total
+        while num > 9:
+            num = sum(int(digit) for digit in str(num))
+        return num
             #type num: int
             #return type: int
 
